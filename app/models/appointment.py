@@ -57,3 +57,11 @@ class Appointment(Base):
     doctor: Mapped["User"] = relationship(
         foreign_keys=[doctor_id]
     )
+
+    @property
+    def patient_name(self) -> str:
+        return self.patient.user.name
+
+    @property
+    def doctor_name(self) -> str:
+        return self.doctor.name

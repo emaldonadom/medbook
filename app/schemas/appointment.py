@@ -32,6 +32,8 @@ class AppointmentResponse(BaseModel):
     id: int
     patient_id: int
     doctor_id: int
+    patient_name: str
+    doctor_name: str
     scheduled_at: datetime
     reason: str
     status: AppointmentStatus

@@ -97,7 +97,8 @@ def get_appointments_for_user(
         db.query(Appointment)
         .options(
             joinedload(Appointment.patient)
-            .joinedload(Patient.user)
+            .joinedload(Patient.user),
+            joinedload(Appointment.doctor)
         )
     )
 
